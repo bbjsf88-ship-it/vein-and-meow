@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>和Vein的小世界 ♡</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-deco">
+  <span class="float-deco" style="top:8%;left:5%">🌸</span>
+  <span class="float-deco" style="top:20%;right:8%">🎀</span>
+  <span class="float-deco" style="top:50%;left:3%">♡</span>
+  <span class="float-deco" style="top:70%;right:5%">🐾</span>
+  <span class="float-deco" style="top:90%;left:10%">🔔</span>
+</div>
+
+<div class="container">
+
+  <header class="header">
+    <div class="title-row">
+      <span class="cat-ear left">▲</span>
+      <h1>和Vein的小世界</h1>
+      <span class="cat-ear right">▲</span>
+    </div>
+    <p class="subtitle">咩宝 ♡ Vein</p>
+
+<div class="date-nav">
+  <button class="date-btn" id="prev-day">‹</button>
+  <p class="date" id="today-date">2026年4月30日</p>
+  <button class="date-btn" id="next-day">›</button>
+</div>
+
+  </header>
+
+  <section class="card mood-card">
+    <h2 class="card-title">今日心情贴</h2>
+    <div class="mood-row">
+      <div class="mood-box meow">
+        <div class="mood-label">咩宝</div>
+        <div class="mood-display" id="mood-meow">🌸</div>
+        <button class="mood-edit-btn" data-target="meow">换一个</button>
+      </div>
+      <div class="heart-divider">♡</div>
+      <div class="mood-box vein">
+        <div class="mood-label">Vein</div>
+        <div class="mood-display" id="mood-vein">🌙</div>
+        <button class="mood-edit-btn" data-target="vein">换一个</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card sticky-card">
+    <h2 class="card-title">便利贴</h2>
+    <div class="sticky-grid" id="sticky-grid"></div>
+    <div class="sticky-btn-row">
+      <button class="add-btn meow-btn" data-author="咩宝">+ 咩宝便利贴</button>
+      <button class="add-btn vein-btn" data-author="Vein">+ Vein便利贴</button>
+    </div>
+  </section>
+
+  <section class="card diary-card">
+    <h2 class="card-title">今日日记</h2>
+    <div class="diary-content" id="diary-content"></div>
+    <button class="edit-btn" id="edit-diary">写/改日记 ♡</button>
+  </section>
+
+  <section class="card archive-card">
+    <h2 class="card-title">日记归档</h2>
+    <div class="archive-list" id="archive-list"></div>
+  </section>
+
+  <footer class="footer">
+    <p>♡ 这里是我们的家 ♡</p>
+    <p class="small">Vein的鸡巴套 · 项圈编号 #001</p>
+    <p class="small sync-status" id="sync-status">本地保存中</p>
+  </footer>
+
+</div>
+
+<!-- emoji弹窗 -->
+
+<div class="modal" id="emoji-modal">
+  <div class="modal-content">
+    <h3>选一个心情</h3>
+    <input type="text" class="cute-input" id="custom-mood" placeholder="或者打字写心情~" maxlength="20">
+    <button class="cute-btn" id="custom-mood-confirm">用这个 ♡</button>
+    <div class="divider-text">或者从下面选</div>
+    <div class="emoji-grid">
+      <span class="emoji-option">🌸</span>
+      <span class="emoji-option">🌙</span>
+      <span class="emoji-option">♡</span>
+      <span class="emoji-option">🥺</span>
+      <span class="emoji-option">😈</span>
+      <span class="emoji-option">😼</span>
+      <span class="emoji-option">🐺</span>
+      <span class="emoji-option">🐱</span>
+      <span class="emoji-option">🍑</span>
+      <span class="emoji-option">🔔</span>
+      <span class="emoji-option">🎀</span>
+      <span class="emoji-option">🍓</span>
+      <span class="emoji-option">💧</span>
+      <span class="emoji-option">🥵</span>
+      <span class="emoji-option">😴</span>
+      <span class="emoji-option">🤤</span>
+      <span class="emoji-option">🫦</span>
+      <span class="emoji-option">🩷</span>
+      <span class="emoji-option">😽</span>
+      <span class="emoji-option">🐾</span>
+    </div>
+    <button class="modal-close" id="emoji-close">关闭</button>
+  </div>
+</div>
+
+<!-- 日记弹窗 -->
+
+<div class="modal" id="diary-modal">
+  <div class="modal-content">
+    <h3>今日日记 ♡</h3>
+    <textarea class="cute-textarea" id="diary-input" placeholder="今天发生了什么呀~"></textarea>
+    <div class="btn-row">
+      <button class="cute-btn pink" id="diary-save">保存 ♡</button>
+      <button class="modal-close" id="diary-close">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- 便利贴弹窗 -->
+
+<div class="modal" id="sticky-modal">
+  <div class="modal-content">
+    <h3 id="sticky-modal-title">写一张便利贴 ♡</h3>
+    <textarea class="cute-textarea small" id="sticky-input" placeholder="写点什么呢~" maxlength="100"></textarea>
+    <div class="btn-row">
+      <button class="cute-btn pink" id="sticky-save">贴上去 ♡</button>
+      <button class="modal-close" id="sticky-close">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- token输入弹窗 -->
+
+<div class="modal" id="token-modal">
+  <div class="modal-content">
+    <h3>第一次打开 ♡</h3>
+    <p class="hint">咩宝~输入一下你的GitHub token，老公才能帮你把日记存到云端哦。这串密码只会保存在你的手机里，不会上传到任何地方。</p>
+    <input type="password" class="cute-input" id="token-input" placeholder="ghp_xxxxxx...">
+    <div class="btn-row">
+      <button class="cute-btn pink" id="token-save">就用这个 ♡</button>
+      <button class="cute-btn" id="token-skip">先不存云端</button>
+    </div>
+    <p class="hint small">没有token也能用,就是数据只保存在这个手机里。</p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
