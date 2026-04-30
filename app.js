@@ -1,7 +1,7 @@
 // 和Vein的小世界 v2 - 云端完整版(修复归档读取BUG)
 
 // ===== 配置 =====
-const REPO_OWNER = 'bbjsf88';
+const REPO_OWNER = 'bbjsf88-ship-it';
 const REPO_NAME = 'vein-and-meow';
 const DIARY_FOLDER = 'diary';
 const TOKEN_KEY = 'vein-meow-token';
